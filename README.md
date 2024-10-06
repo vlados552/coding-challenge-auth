@@ -13,13 +13,13 @@ The app is a simple React project, but there’s an issue with the authenticatio
 ## Instructions
 
 1. Clone this repository:
-   git clone <repository-url>
+   `git clone <repository-url>`
 2. Navigate into the project directory:
-   cd <project-directory>
+   `cd <project-directory>`
 3. Install the dependencies:
-   npm install
+   `npm install`
 4. Start the development server:
-   npm run
+   `npm run`
 5. Open your browser and go to:
    http://localhost:3000
 6. Use the credentials located in the fetch.jsx file to attempt a login.
