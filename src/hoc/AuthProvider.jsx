@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
     // Function to set the authentication token
     const signin = (newToken, callback) => {
         setToken(newToken);
-        localStorage.setItem("token", token);
+        localStorage.setItem("token", newToken);
         callback();
     };
 
