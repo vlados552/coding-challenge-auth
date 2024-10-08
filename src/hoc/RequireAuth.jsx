@@ -5,6 +5,8 @@ export const RequireAuth = () => {
     const { token } = useAuth();
     const location = useLocation();
 
+    console.log("Token in RequireAuth:", token)
+
     // Check if the user is authenticated
     if (!token) {
         // If not authenticated, redirect to the login page

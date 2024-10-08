@@ -7,6 +7,7 @@ import Container from "./Container";
 
 const Routes = () => {
     const { token } = useAuth();
+    console.log("token in routes is " + token)
 
     const router = createBrowserRouter([
         {
