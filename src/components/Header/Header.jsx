@@ -7,9 +7,9 @@ import CustomerSignInPage from "../CustomerSignInPage/CustomerSignInPage";
 import { HeartSVG, BoxSVG, BasketSVG, EyeSVG } from "../../images/SVGAssets";
 import { useAuth } from "../../hook/useAuth";
 
-function Header({ token, setModalIsOpen, setModalContent }) {
+function Header({ setModalIsOpen, setModalContent }) {
     const navigate = useNavigate();
-    const { signout } = useAuth();
+    const { signout, token } = useAuth();
 
     useEffect(() => {}, [token]);
 
