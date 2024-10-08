@@ -3,26 +3,25 @@ import { createContext, useState } from "react";
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-    // State to hold the authentication token
-    const [token, setToken] = useState(localStorage.getItem("token"));
+  // State to hold the authentication token
+  const [token, setToken] = useState(localStorage.getItem("token"));
 
-    // Function to set the authentication token
-    const signin = (newToken, callback) => {
-        setToken(newToken);
-        localStorage.setItem("token", token);
-        callback();
-    };
+  // Function to set the authentication token
+  const signin = (newToken, callback) => {
+    setToken(newToken);
+    localStorage.setItem("token", newToken);
+    console.log("User signed in with token:", newToken);
+    callback();
+  };
 
-    const signout = (callback) => {
-        setToken(null);
-        localStorage.removeItem("token");
-        callback();
-    };
+  const signout = (callback) => {
+    setToken(null);
+    localStorage.removeItem("token");
+    callback();
+  };
 
-    const value = { token, signin, signout };
+  const value = { token, signin, signout };
 
-    // Provide the authentication context to the children components
-    return (
-        <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
-    );
+  // Provide the authentication context to the children components
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
